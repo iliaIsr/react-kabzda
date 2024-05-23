@@ -19,39 +19,5 @@ root.render(
 reportWebVitals();
 
 
-let a ={
-    name: "Dima",
-    age:10,
-    adress: {
-        city: 'Minsk',
-        country: 'Belarus'
-    }
-};
 
-let users = [
-    {
-        name: "Dima",
-        age:10,
-        adress: {
-            city: 'Minsk',
-            country: 'Belarus'
-        }
-    },
-
-{
-    name: "Viktor",
-        age:15,
-    adress: {
-    city: 'Minsk',
-        country: 'Belarus'
-}
-}
-]
-
-let b:Array<string | number| boolean>
- b =['1','2','3','4',5, true];
-
-
-
-console.log(users[0].adress.country);
 
