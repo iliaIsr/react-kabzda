@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
-
+import React, {MouseEventHandler, useState} from 'react';
+type onType=boolean
 type PropsTypeOnOf={
-    //on:boolean
+    on:onType
+    onClick:(on:onType)=>void
 }
 
 
 export const OnOf = (props:PropsTypeOnOf) => {
 
-    let[on,setOn]=useState(false)
+
 
 
     const onStyle={
@@ -16,7 +17,7 @@ export const OnOf = (props:PropsTypeOnOf) => {
         border: "1px solid black",
         display:"inline-block",
         padding:'2px',
-        backgroundColor:on?"green":"white"
+        backgroundColor:props.on?"green":"white"
     }
     const offStyle={
         width:"30px",
@@ -25,7 +26,7 @@ export const OnOf = (props:PropsTypeOnOf) => {
         display:"inline-block",
         marginLeft: "2px",
         padding:'2px',
-        backgroundColor: on?"white":"red"
+        backgroundColor: props.on?"white":"red"
     }
     const indicatorStyle={
         width:"10px",
@@ -34,12 +35,13 @@ export const OnOf = (props:PropsTypeOnOf) => {
         border:"1px solid black",
         display:"inline-block",
         marginLeft:"5px",
-        backgroundColor: on?"green":"red"
+        backgroundColor: props.on?"green":"red"
     }
+
     return (
         <div>
-            <div style={onStyle} onClick={()=>{setOn(true)}}>on</div>
-            <div style={offStyle} onClick={()=>{setOn(false)}}>off</div>
+            <div style={onStyle} onClick={()=>props.onClick(true)}>on</div>
+            <div style={offStyle} onClick={()=>props.onClick(false)}>off</div>
             <div style={indicatorStyle}></div>
         </div>
     );
