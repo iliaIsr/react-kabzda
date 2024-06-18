@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Acordion} from "./components/accordion/Accordion";
+import {Accordion} from "./components/accordion/Accordion";
 import {Rating, RatingValueType} from "./components/rating/Rating";
 import {OnOf} from "./components/onOf/OnOf";
 import {OnOfUncontroll} from "./components/onOf/OnOfUncontroll";
@@ -19,7 +19,7 @@ function App() {
             {/*Article 1*/}
             {/*<Rating value={3}/>*/}
             {/*<Acordion titleValue={"Menu"} collapset={accordionCollapset} onClick={setAccordionCollapset}/> */}
-            <Acordion titleValue={"Menu"} collapset={accordionCollapset} onClick={()=>{setAccordionCollapset(!accordionCollapset)}}/>
+            <Accordion titleValue={"Menu"} collapset={accordionCollapset} onChange={()=>{setAccordionCollapset(!accordionCollapset)}}/>
             {/*<Acordion titleValue={"Users"} collapset={true}/>*/}
             {/*<Rating value={0}/>*/}
             {/*<Rating value={1}/>*/}
