@@ -1,3 +1,4 @@
+
 import type {Meta, StoryObj} from '@storybook/react';
 import { action } from '@storybook/addon-actions';// проимпортировать
 import {Accordion} from './Accordion';
