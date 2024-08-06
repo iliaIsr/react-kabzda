@@ -3,6 +3,7 @@ import {action} from "@storybook/addon-actions";
 import {useState, useRef} from 'react';
 import {any} from "prop-types";
 
+
 export default {
     title: "input"
 }
@@ -21,26 +22,28 @@ export const TrackValueOfUncontrollInput = () => {
 
 export const GetValueOfUncontrollInputByButtonPress = () => {
     const [value, setValue] = useState('');
-    const inputRef = useRef <HTMLInputElement> (null);
+    const inputRef = useRef<HTMLInputElement>(null);
     const save = () => {
         const el = inputRef.current as HTMLInputElement;
         setValue(el.value)
     }
-    return <> <input ref={inputRef}/> <button onClick={save}> save </button> actual value: {value} </>;
+    return <> <input ref={inputRef}/>
+        <button onClick={save}> save</button>
+        actual value: {value} </>;
 
 }
 
-export const controlledInput =()=>{
-const [parentValue, setParentValue]=useState("")
-    const onChange=(e: ChangeEvent<HTMLInputElement>)=>{
-    setParentValue(e.currentTarget.value)
+export const controlledInput = () => {
+    const [parentValue, setParentValue] = useState("")
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.value)
     }
     return <input value={parentValue} onChange={onChange}/>
 }
 
-export const controlledCheckBox=()=>{
-    const [parValue, setParValue]=useState(true)
-    const onChange=(e: ChangeEvent<HTMLInputElement>)=>{
+export const controlledCheckBox = () => {
+    const [parValue, setParValue] = useState(true)
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setParValue(e.currentTarget.checked)
     }
 
@@ -48,20 +51,31 @@ export const controlledCheckBox=()=>{
 }
 
 
-export const controllSelected=()=>{
-    const [val, setVal]=useState<string>('1')
-    const onChange=(e:ChangeEvent<HTMLSelectElement>)=>{
+export const controllSelected = () => {
+    const [val, setVal] = useState<string>('1')
+    const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setVal(e.currentTarget.value)
     }
 
     return <select value={val} onChange={onChange}>
         <option value={'1'}>Jenya</option>
         <option value={'2'}>Ekaterina</option>
-        <option value={'3'}>  Viktoria</option>
+        <option value={'3'}> Viktoria</option>
     </select>
 }
 
+export const ControllInputMyJob = () => {
+  const [value, setValue]=useState("")
+   const refInput=useRef<HTMLInputElement>(null)
+    const save=()=>{
+     const el=refInput.current as HTMLInputElement
+        setValue(el.value)
+    }
 
+    return<>
+    <input ref={refInput}/> <button onClick={save}>save</button>{value}
+    </>
+}
 
 // export const controlledSelect=()=>{
 //     const [parValue, setParValue]=useState<string|undefined>("2")
