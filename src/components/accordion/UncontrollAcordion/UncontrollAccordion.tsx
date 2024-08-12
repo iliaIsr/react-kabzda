@@ -1,5 +1,5 @@
 import React, {useReducer} from "react";
-import {reducer, TOGLE_CONSTANT} from "./reducer";
+import {reducer, TOGLE_COLLAPSED} from "./reducer";
 const style={
     cursor:`pointer`
 }
@@ -23,7 +23,7 @@ export function UncontrollAcordion(props:AccordionPropsType){
                {/*<AccordionTitle title={props.titleValue} onClick={()=>{ setCollapset(!collapset)}}/>*/}
 
                 <AccordionTitle title={props.titleValue} onClick={()=>{
-                    dispatch({type:TOGLE_CONSTANT})}}/>
+                    dispatch({type:TOGLE_COLLAPSED})}}/>
 
                 {/*<button onClick={()=>{setCollapset(!collapset)}}>TOGGLE</button>*/}
                 {!state.collapsed&&<AcordionBody/>}

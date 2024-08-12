@@ -1,14 +1,14 @@
 import {ActionType} from "./UncontrollAccordion";
 
-export const TOGLE_CONSTANT='TOGGLE-COLLAPSED'
+export const TOGLE_COLLAPSED='TOGGLE-COLLAPSED'
 
-type StateType={
+export type StateType={
     collapsed:boolean
 }
 
 export const reducer=(state:StateType, action:ActionType):StateType=>{
     switch (action.type) {
-        case TOGLE_CONSTANT:
+        case TOGLE_COLLAPSED:
             return {
                 ...state,
                collapsed:!state.collapsed
