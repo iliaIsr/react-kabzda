@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/accordion/Accordion";
+
 import {Rating, RatingValueType} from "./components/rating/Rating";
 import {OnOf} from "./components/onOf/OnOf";
 import {OnOfUncontroll} from "./components/onOf/OnOfUncontroll";
 import {UncontrollAcordion} from "./components/accordion/UncontrollAcordion/UncontrollAccordion";
 import {UncontrollRating} from "./components/rating/UncontrollRating";
+import {Accordion} from "./components/accordion/Accordion/Accordion";
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
             {/*Article 1*/}
             {/*<Rating value={3}/>*/}
             {/*<Acordion titleValue={"Menu"} collapset={accordionCollapset} onClick={setAccordionCollapset}/> */}
-            <Accordion titleValue={"Menu"} collapset={accordionCollapset} onChange={()=>{setAccordionCollapset(!accordionCollapset)}}/>
+            <Accordion titleValue={"Menu"} collapset={accordionCollapset} onChange={()=>{setAccordionCollapset(!accordionCollapset)}}
+                       items={[{title:"Dimych", value:1},{title:"Vova", value:2}, {title:"Vity", value:3}]} onClick={(value)=>{alert(`person with id: ${value} should be happy`)}}
+            />
             {/*<Acordion titleValue={"Users"} collapset={true}/>*/}
             {/*<Rating value={0}/>*/}
             {/*<Rating value={1}/>*/}
