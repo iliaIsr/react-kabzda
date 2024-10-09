@@ -6,28 +6,51 @@ export default {
 
 export const SimpleExample=()=>{
     const [counter, setCounter]=useState(1)
-    // const [fake, setFake]=useState(10)
+    const [fake, setFake]=useState(10)
 
-    console.log('SimplExample')
 
-    useEffect(() => {
-        console.log('useEffect');
-        document.title=counter.toString();
-        alert(`ny i...${counter}`)
-    });
-
-    // const func=()=>{
-    //     console.log("function")
-    //     alert('function')
-    // }
-    // func()
+    useEffect(()=>{
+        debugger
+        console.log('counter:', counter)
+        document.title=(counter).toString()
+    },[])
 
     return<>
-    Hello,{counter}-----------
-        {/*{fake}*/}
-        <button onClick={()=>setCounter(counter+1)}>+</button>
-        {/*<button onClick={()=>setFake(fake+10)}>+</button>*/}
+       HELLO {counter}
+    <button onClick={()=>setCounter(counter+1)}>+</button>
+        It's Fake {fake}
+        <button onClick={()=>setFake(fake+10)}>X</button>
     </>
 }
-//почему при 2х стэйтах сначала отрабатывает ЮзЭф , даже с зависимостями
-// коментарии влияют на работу ЮзЭф??
+
+export const SetTimeOutExample=()=>{
+    const [counter, setCounter]=useState(1)
+    const [fake, setFake]=useState(10)
+
+    console.log('setTimeOutExample')
+    //
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         console.log('setTimeOut')
+    //         document.title=counter.toString()
+    //     },1000)
+    // },[counter])
+
+    useEffect(()=>{
+        setInterval(()=>{
+            console.log('setTimeOut')
+            document.title=counter.toString()
+            setCounter(prevState=>prevState+1)
+        },1000)
+    },[])
+
+
+
+    return<>
+       <p> HELLO {counter}</p>
+        {/*<button onClick={()=>setCounter(counter+1)}>+</button>*/}
+       <p>It's Fake {fake} </p>
+        {/*<button onClick={()=>setFake(fake+10)}>X</button>*/}
+    </>
+}
+
