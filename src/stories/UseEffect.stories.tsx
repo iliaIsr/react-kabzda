@@ -40,7 +40,8 @@ export const SetTimeOutExample=()=>{
         setInterval(()=>{
             console.log('setTimeOut')
             document.title=counter.toString()
-            setCounter(prevState=>prevState+1)
+            setCounter((prevState)=>prevState+1)
+            setCounter(counter+1)
         },1000)
     },[])
 
