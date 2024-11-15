@@ -16,7 +16,7 @@ export const WitchValue = () => {
         <Select onChange={setValue}
                 value={value}
                 items={[
-                    {value: '1', title: "Minsk"},
+                    {value: '1', title: "Vitebsk"},
                     {value: '2', title: "Moscow"},
                     {value: '3', title: 'Kyev'}
                 ]}/>
