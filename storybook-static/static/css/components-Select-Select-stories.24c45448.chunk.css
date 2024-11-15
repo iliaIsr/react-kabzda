@@ -1,0 +1,19 @@
+.Select_select__kLKnz .Select_main__wlFdY {
+border: 1px solid black;
+display: inline-block;
+    min-height: 20px;
+    min-width: 40px;
+}
+
+.Select_items__LB-lu {
+    position: absolute;
+    padding: 5px;
+    border: 1px black  solid;
+}
+
+.Select_item__aCPqW.Select_selected__BD49T {
+    background-color: blue;
+    color: white;
+}
+
+/*# sourceMappingURL=components-Select-Select-stories.24c45448.chunk.css.map*/
